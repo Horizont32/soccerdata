@@ -19,6 +19,7 @@ import requests
 import selenium
 import seleniumbase
 from seleniumbase import SB
+import seleniumbase
 import undetected_chromedriver as uc
 from dateutil.relativedelta import relativedelta
 from packaging import version
@@ -623,7 +624,7 @@ class BaseSeleniumReader(BaseReader):
             chrome_options.add_argument("--proxy-server=" + proxy_str)
             chrome_options.add_argument("--host-resolver-rules=" + resolver_rules)
         if self.headless:
-            return seleniumbase.SB(uc=True, headless=True)
+            return seleniumbase.Driver(uc=True, headless=True)
         return uc.Chrome(options=chrome_options)
 
     def _download_and_save(
