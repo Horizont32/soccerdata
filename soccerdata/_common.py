@@ -17,6 +17,8 @@ import numpy as np
 import pandas as pd
 import requests
 import selenium
+import seleniumbase
+from seleniumbase import SB
 import undetected_chromedriver as uc
 from dateutil.relativedelta import relativedelta
 from packaging import version
@@ -620,6 +622,8 @@ class BaseSeleniumReader(BaseReader):
             resolver_rules = "MAP * ~NOTFOUND , EXCLUDE 127.0.0.1"
             chrome_options.add_argument("--proxy-server=" + proxy_str)
             chrome_options.add_argument("--host-resolver-rules=" + resolver_rules)
+        if self.headless:
+            return seleniumbase.SB(uc=True, headless=True)
         return uc.Chrome(options=chrome_options)
 
     def _download_and_save(

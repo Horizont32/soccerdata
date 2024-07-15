@@ -25,3 +25,4 @@ from .sofascore import Sofascore
 from .sofifa import SoFIFA
 from .understat import Understat
 from .whoscored import WhoScored
+from ._common import get_proxy

@@ -30,6 +30,7 @@ requests = "^2.23"
 rich = "^13.0.0"
 undetected-chromedriver = "^3.5.0"
 unicode = "^2.7"
+seleniumbase = "^4.28.5"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^8.0.0"
